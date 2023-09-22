@@ -1,0 +1,119 @@
+### 1
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 314
+
+{
+    "account": "650d6f29741d3e87051f6e7c",
+    "side": "A",
+    "volume": 100,
+    "price": 20
+}
+
+### 2
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 123
+
+{
+    "account": "650d6f29741d3e87051f6e7d",
+    "side": "B",
+    "volume": 150,
+    "price": 21
+}
+
+### 3
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 420
+
+{
+    "account": "650d6f29741d3e87051f6e7e",
+    "side": "A",
+    "volume": 50,
+    "price": 19
+}
+### 4
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 314
+
+{
+    "account": "650d6f29741d3e87051f6e7c",
+    "side": "B",
+    "volume": 30,
+    "price": 22
+}
+
+### 5
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 314
+
+{
+    "account": "650d6f29741d3e87051f6e7c",
+    "side": "A",
+    "volume": 40,
+    "price": 20
+}
+
+### 6
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 420
+
+{
+    "account": "650d6f29741d3e87051f6e7e",
+    "side": "B",
+    "volume": 110,
+    "price": 23
+}
+
+### 7
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 123
+
+{
+    "account": "650d6f29741d3e87051f6e7d",
+    "side": "A",
+    "volume": 200,
+    "price": 24
+}
+
+### 8
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 123
+
+{
+    "account": "650d6f29741d3e87051f6e7d",
+    "side": "A",
+    "volume": 300,
+    "price": 19
+}
+
+# Expected
+# Accounts C, D, E starting at 10000 each no net position
+
+# Operation,Side,Volume,Account,Price
+# Insert,A,100,C,20
+# Insert,B,150,D,21 * Transaction caused
+# Insert,A,50,E,19 * Transaction caused
+# Insert,B,30,C,22
+# Insert,A,40,C,20 * WASH ORDER REJECTED
+# Insert,B,110,E,23
+# Insert,A,200,D,24 
+# Insert,A,300,D,19 * Transaction caused
+
+# D buys 100 @ 20 from C
+# E sells 50 @ 21 to D
+# D sells 30 @ 22 to C && sells 110 @ 23 to E
+
+# Net positions
+# C: Cash: 11340, net_position: -70
+# D: Cash: 10140, net_position: -10
+# E: Cash: 8520, net_position: +60
+
+# Open orders
+# D has asks for 200 @ 24 and order for 160 @ 19 

@@ -1,0 +1,31 @@
+###
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 314
+
+{
+    "account": "650be4cec5f1ce4d4e66b140",
+    "side": "A",
+    "volume": 750,
+    "price": 20
+}
+###
+DELETE http://localhost:3000/api/order/650be88c9046479be50fa80c
+content-type: application/json
+api_key: 314
+
+{
+    "account": "650be4cec5f1ce4d4e66b140"
+}
+###
+POST http://localhost:3000/api/order/new/ 
+content-type: application/json
+api_key: 123
+
+{
+    "account": "650be5c6c5f1ce4d4e66b142",
+    "side": "B",
+    "volume": 150,
+    "price": 19.1
+}
+###

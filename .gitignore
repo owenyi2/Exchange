@@ -1,4 +1,3 @@
 .env
 node_modules
 resetDB.js
-test.REST

@@ -1,0 +1,21 @@
+accounts
+{"_id":{"$oid":"650d6f29741d3e87051f6e7c"},"cash":{"$numberDecimal":"11340"},"open_orders":[],"account_enabled":true,"api_key_hash":"748064be03a08df81e31bd6f9e7e7c4cc9f84b4401b9a3c6e85b7ff816d3ba68","net_position":{"$numberInt":"-70"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d6f29741d3e87051f6e7d"},"cash":{"$numberDecimal":"10140"},"open_orders":[{"$oid":"650d83f81003622b41a5a616"},{"$oid":"650d84031003622b41a5a629"}],"account_enabled":true,"api_key_hash":"a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3","net_position":{"$numberInt":"10"},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d6f29741d3e87051f6e7e"},"cash":{"$numberDecimal":"8520"},"open_orders":[],"account_enabled":true,"api_key_hash":"db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d","net_position":{"$numberInt":"60"},"__v":{"$numberInt":"0"}}
+
+market_data
+{"_id":{"$oid":"650d83d91003622b41a5a5d7"},"operation":"Insert","side":"A","volume":{"$numberInt":"100"},"account":{"$oid":"650d6f29741d3e87051f6e7c"},"price":{"$numberDecimal":"20"},"createdAt":{"$date":{"$numberLong":"1695384537285"}},"updatedAt":{"$date":{"$numberLong":"1695384537285"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d83dd1003622b41a5a5e1"},"operation":"Insert","side":"B","volume":{"$numberInt":"150"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"21"},"createdAt":{"$date":{"$numberLong":"1695384541634"}},"updatedAt":{"$date":{"$numberLong":"1695384541634"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d83e41003622b41a5a5ef"},"operation":"Insert","side":"A","volume":{"$numberInt":"50"},"account":{"$oid":"650d6f29741d3e87051f6e7e"},"price":{"$numberDecimal":"19"},"createdAt":{"$date":{"$numberLong":"1695384548309"}},"updatedAt":{"$date":{"$numberLong":"1695384548309"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d83ea1003622b41a5a5fa"},"operation":"Insert","side":"B","volume":{"$numberInt":"30"},"account":{"$oid":"650d6f29741d3e87051f6e7c"},"price":{"$numberDecimal":"22"},"createdAt":{"$date":{"$numberLong":"1695384554707"}},"updatedAt":{"$date":{"$numberLong":"1695384554707"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d83f21003622b41a5a607"},"operation":"Insert","side":"B","volume":{"$numberInt":"110"},"account":{"$oid":"650d6f29741d3e87051f6e7e"},"price":{"$numberDecimal":"23"},"createdAt":{"$date":{"$numberLong":"1695384562994"}},"updatedAt":{"$date":{"$numberLong":"1695384562994"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d83f71003622b41a5a611"},"operation":"Insert","side":"A","volume":{"$numberInt":"200"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"24"},"createdAt":{"$date":{"$numberLong":"1695384567239"}},"updatedAt":{"$date":{"$numberLong":"1695384567239"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d83fe1003622b41a5a61c"},"operation":"Insert","side":"A","volume":{"$numberInt":"300"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"19"},"createdAt":{"$date":{"$numberLong":"1695384574465"}},"updatedAt":{"$date":{"$numberLong":"1695384574465"}},"__v":{"$numberInt":"0"}}
+
+orders
+{"_id":{"$oid":"650d83f81003622b41a5a616"},"side":"A","volume":{"$numberInt":"200"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"24"},"createdAt":{"$date":{"$numberLong":"1695384568321"}},"updatedAt":{"$date":{"$numberLong":"1695384568321"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d84031003622b41a5a629"},"side":"A","volume":{"$numberInt":"160"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"19"},"createdAt":{"$date":{"$numberLong":"1695384579068"}},"updatedAt":{"$date":{"$numberLong":"1695384579068"}},"__v":{"$numberInt":"0"}}
+
+Notes
+things screw up if i make requests without waiting for previous ones to finish
+this is particularly an issue because each request takes so damn long

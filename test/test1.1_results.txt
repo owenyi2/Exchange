@@ -1,0 +1,14 @@
+market_data
+{"_id":{"$oid":"650d87ef1003622b41a5a62e"},"operation":"Insert","side":"A","volume":{"$numberInt":"100"},"account":{"$oid":"650d6f29741d3e87051f6e7c"},"price":{"$numberDecimal":"20"},"createdAt":{"$date":{"$numberLong":"1695385583844"}},"updatedAt":{"$date":{"$numberLong":"1695385583844"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d87f01003622b41a5a634"},"operation":"Insert","side":"B","volume":{"$numberInt":"150"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"21"},"createdAt":{"$date":{"$numberLong":"1695385584649"}},"updatedAt":{"$date":{"$numberLong":"1695385584649"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d87f21003622b41a5a642"},"operation":"Insert","side":"A","volume":{"$numberInt":"50"},"account":{"$oid":"650d6f29741d3e87051f6e7e"},"price":{"$numberDecimal":"19"},"createdAt":{"$date":{"$numberLong":"1695385586337"}},"updatedAt":{"$date":{"$numberLong":"1695385586337"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d87f31003622b41a5a64e"},"operation":"Insert","side":"B","volume":{"$numberInt":"30"},"account":{"$oid":"650d6f29741d3e87051f6e7c"},"price":{"$numberDecimal":"22"},"createdAt":{"$date":{"$numberLong":"1695385587547"}},"updatedAt":{"$date":{"$numberLong":"1695385587547"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d87f41003622b41a5a658"},"operation":"Insert","side":"A","volume":{"$numberInt":"40"},"account":{"$oid":"650d6f29741d3e87051f6e7c"},"price":{"$numberDecimal":"20"},"createdAt":{"$date":{"$numberLong":"1695385588931"}},"updatedAt":{"$date":{"$numberLong":"1695385588931"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d87f61003622b41a5a663"},"operation":"Insert","side":"B","volume":{"$numberInt":"110"},"account":{"$oid":"650d6f29741d3e87051f6e7e"},"price":{"$numberDecimal":"23"},"createdAt":{"$date":{"$numberLong":"1695385590330"}},"updatedAt":{"$date":{"$numberLong":"1695385590330"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d87f71003622b41a5a673"},"operation":"Insert","side":"A","volume":{"$numberInt":"200"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"24"},"createdAt":{"$date":{"$numberLong":"1695385591978"}},"updatedAt":{"$date":{"$numberLong":"1695385591978"}},"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"650d87f91003622b41a5a67d"},"operation":"Insert","side":"A","volume":{"$numberInt":"300"},"account":{"$oid":"650d6f29741d3e87051f6e7d"},"price":{"$numberDecimal":"19"},"createdAt":{"$date":{"$numberLong":"1695385593419"}},"updatedAt":{"$date":{"$numberLong":"1695385593419"}},"__v":{"$numberInt":"0"}}
+
+So i think what happens is that the 5th order {id: 650d87f41003622b41a5a658} is sent before the 4th order {id: 650d87f31003622b41a5a64e}
+is processed and stored into the database
+
+This is very bad because we suddenly have 30660 cash circulating around when we started with 30000

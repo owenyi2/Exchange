@@ -5,7 +5,7 @@ const asyncHandler = require("express-async-handler");
 
 exports.post_new_order = asyncHandler(async (req, res, next) => {
     // add to market information database
-    await MarketData.create({
+    const market_data = await MarketData.create({
         operation: "Insert",
         side: req.body.side,
         volume: req.body.volume,
@@ -81,6 +81,7 @@ exports.post_new_order = asyncHandler(async (req, res, next) => {
     }
     await aggressor.save()
 
+    req.body.volume = current_volume
     // add to open_orders and account
     if (req.body.volume > 0) {
         const new_order = new Order(req.body)

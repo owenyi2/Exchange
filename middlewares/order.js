@@ -8,8 +8,6 @@ exports.authenticate_order = asyncHandler(async (req, res, next) => {
     const SHA256 = new Hashes.SHA256
     const account = await Account.findById(req.body.account).lean();
 
-    console.log(req.headers.api_key)
-    console.log(SHA256.hex(req.headers.api_key))
     if (!req.headers.api_key || account.api_key_hash !== SHA256.hex(req.headers.api_key) || !account.account_enabled) {
         res.status(401).json({error: 'unauthorised'})
     }
@@ -35,6 +33,8 @@ exports.check_valid_order = asyncHandler(async(req, res, next) => {
         else if (req.body.side == "A") {
             possible_wash_orders = open_orders.filter((order) => order.side == "B" && order.price >= req.body.price)
         }
+
+        console.log(await Order.find({}))
 
         if (possible_wash_orders.length > 0) {
             res.status(403).json({error: 'no wash orders are allowed'})
