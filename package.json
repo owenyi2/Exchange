@@ -1,0 +1,21 @@
+{
+  "name": "exchange",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "devstart": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "debug": "DEBUG=exchange:* npm start"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "http-errors": "~1.6.3",
+    "jshashes": "^1.0.8",
+    "mongoose": "^7.5.2",
+    "morgan": "~1.9.1"
+  }
+}
